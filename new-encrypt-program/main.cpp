@@ -10,7 +10,7 @@ int main()
 	if (r == NULL)
 	{
 		_RED;
-		cout << "input.txt이 존재하지 않습니다.\n";
+		cout << "input.txt doesn't exist.\n";
 		_RESET;
 		return 0;
 	}
