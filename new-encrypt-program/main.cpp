@@ -17,8 +17,6 @@ int main()
 	}
 	int len = fread(buf, sizeof(char), 4096, r);
 	buf[len] = NULL;
-	//fscanf(r, "%s", buf);
-	//fgets(buf, 4096, r);
 
 	// Output
 	printf("%s", buf);
