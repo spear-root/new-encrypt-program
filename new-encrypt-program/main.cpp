@@ -5,8 +5,9 @@ char buf[4096 + 5];
 
 int main()
 {
+	// Input
 	FILE *r, *w;
-	r = fopen("input.txt", "r");
+	r = fopen("input.txt", "rt");
 	if (r == NULL)
 	{
 		_D_RED;
@@ -14,12 +15,12 @@ int main()
 		_RESET;
 		return EXIT_FAILURE;
 	}
-
-	
-	fread(buf, 1, 4096, r);
+	int len = fread(buf, sizeof(char), 4096, r);
+	buf[len] = NULL;
 	//fscanf(r, "%s", buf);
 	//fgets(buf, 4096, r);
 
+	// Output
 	printf("%s", buf);
 
 	fclose(r);
