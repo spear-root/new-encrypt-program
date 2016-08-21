@@ -7,7 +7,7 @@ int main()
 {
 	// Input
 	FILE *r, *w;
-	r = fopen("input.txt", "rt");
+	r = fopen("input.txt", "rb");
 	if (r == NULL)
 	{
 		_D_RED;
