@@ -9,8 +9,8 @@ int main()
 	r = fopen("input.txt", "r");
 	if (r == NULL)
 	{
-		_RED;
-		cout << "input.txt doesn't exist.\n";
+		_D_RED;
+		cout << "input.txt doesn't exist. Shutting down the program.\n";
 		_RESET;
 		return 0;
 	}
