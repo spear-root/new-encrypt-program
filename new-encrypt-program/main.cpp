@@ -16,8 +16,8 @@ int main()
 	}
 
 	
-	fread(buf, 1, 4096, r);
-	//fscanf(r, "%s", buf);
+	//fread(buf, 1, 4096, r);
+	fscanf(r, "%s", buf);
 	//fgets(buf, 4096, r);
 
 	printf("%s\n", buf);
