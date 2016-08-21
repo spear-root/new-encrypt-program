@@ -10,9 +10,9 @@ int main()
 	if (r == NULL)
 	{
 		_D_RED;
-		cout << "input.txt doesn't exist. Shutting down the program.\n";
+		perror("input.txt");
 		_RESET;
-		return 0;
+		return EXIT_FAILURE;
 	}
 
 	
@@ -20,7 +20,7 @@ int main()
 	//fscanf(r, "%s", buf);
 	//fgets(buf, 4096, r);
 
-	printf("%s\n", buf);
+	printf("%s", buf);
 
 	fclose(r);
 	return 0;
