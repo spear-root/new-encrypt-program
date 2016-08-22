@@ -1,7 +1,10 @@
 #include "D:\B.C.K\Dropbox\H\ustd\ustd v4.5.10.h"
+#include "base64.cpp"
+#include "base64.h"
 using namespace std;
 
-char buf[4096 + 5];
+//char buf[4096 + 5];
+char *buf;
 
 int main()
 {
@@ -17,6 +20,9 @@ int main()
 	}
 	int len = fread(buf, sizeof(char), 4096, r);
 	buf[len] = NULL;
+
+	// Encrypt
+	;
 
 	// Output
 	printf("%s", buf);
