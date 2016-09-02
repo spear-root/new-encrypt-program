@@ -5,15 +5,25 @@
 
 using namespace std;
 
-string inputfile, outputfile;
+string inputfile="input.txt", outputfile;
 char buf[4096];
 vector<char> original;
+bool mode_enteractive;
 
 const char str_hello[] = "Hello! Welcome to <put this program name here>!";
 const char str_request_inputfile[] = "Input file name (including path) : ";
 const char str_request_outputfile[] = "Output file name (Empty to assume filename.enc)";
 const char str_processing[] = "Encrypting the file... Might take some time.";
 const char str_finished[] = "Encryption is finished now!";
+
+void parse_parm(int argc, char* argv[]) {
+	for(int i=1; i<argc; i++) {
+		if(strcmp(argv[i], "--interactive")==1)
+			mode_interactive = true;
+		else if(strcmp(argv[i], "--non-interactive")==1)
+			mode_interactive = false;
+	}
+}
 
 //Encrypt one byte of data.
 inline char encrypt(const char data) {
@@ -28,15 +38,18 @@ void process(FILE* r, FILE* w) {
 	fwrite(buf, sizeof(char), size, w);
 }
 
-int main()
+int main(int argc, char* argv[])
 {
-	cout << str_hello << endl;
-	cout << str_request_inputfile;
-	cin.getline(buf);
-	inputfile = buf;
-	cout << str_request_outputfile;
-	cin.getline(buf);
-	outputfile = buf;
+	parse_parm(argc, argv);
+	if(mode_interactive) {
+		cout << str_hello << endl;
+		cout << str_request_inputfile;
+		cin.getline(buf);
+		inputfile = buf;
+		cout << str_request_outputfile;
+		cin.getline(buf);
+		outputfile = buf;
+	}
 	if(outputfile == "")
 		outputfile = inputfile + ".enc";
 	
@@ -58,6 +71,7 @@ int main()
 	//Close
 	fclose(r);
 	fclose(w);
-	cout << str_finished << endl;
+	if(mode_interactive)
+		cout << str_finished << endl;
 	return 0;
 }
