@@ -13,9 +13,10 @@ const char str_hello[] = "Hello! Welcome to <put this program name here>!";
 const char str_request_inputfile[] = "Input file name (including path) : ";
 const char str_request_outputfile[] = "Output file name (Empty to assume filename.enc)";
 const char str_processing[] = "Encrypting the file... Might take some time.";
+const char str_finished[] = "Encryption is finished now!";
 
 //Encrypt one byte of data.
-inline char encrypt(register char data) {
+inline char encrypt(const char data) {
 	//TODO: Implement encryption
 }
 
@@ -57,5 +58,6 @@ int main()
 	//Close
 	fclose(r);
 	fclose(w);
+	cout << str_finished << endl;
 	return 0;
 }
