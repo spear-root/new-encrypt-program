@@ -17,18 +17,17 @@ int main()
 		return EXIT_FAILURE;
 	}
 
-	int len = fread(buf, sizeof(char), 4096, r);  // ÆÄÀÏ Å©±â°¡ 4kB¸¦ ³ÑÀ» °æ¿ì for¹®À¸·Î 4kB¾¿ Àß¶ó ¹Þ´Â ÄÚµå Ãß°¡ ¿¹Á¤.
+	int len = fread(buf, sizeof(char), 4096, r);  // íŒŒì¼ í¬ê¸°ê°€ 4kBë¥¼ ë„˜ì„ ê²½ìš° forë¬¸ìœ¼ë¡œ 4kBì”© ìž˜ë¼ ë°›ëŠ” ì½”ë“œ ì¶”ê°€ ì˜ˆì •.
 	
 	original.resize(len);
-	// char[]¿¡ µé¾îÀÖ´Â ¹ÙÀÌ³Ê¸® µ¥ÀÌÅÍ¸¦ vector<char>À¸·Î ¿Å±ä´Ù
+	// char[]ì— ë“¤ì–´ìžˆëŠ” ë°”ì´ë„ˆë¦¬ ë°ì´í„°ë¥¼ vector<char>ìœ¼ë¡œ ì˜®ê¸´ë‹¤
 	for (int i = 0; i < len; i++)
 	{
 		original[i] = buf[i];
 	}
 
 
-	// Encrypt
-	;
+	//TODO: Implement encrypt function.
 
 
 	// Output
