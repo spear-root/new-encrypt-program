@@ -1,14 +1,14 @@
-//#include "D:\B.C.K\Dropbox\H\ustd\ustd v4.5.10.h"
+//#include "D:\B.C.K\Dropbox\H\ustd\ustd v4.5.10.h" //You should open this header file is you're willing to ipen this code.
 #include <cstdio>
 #include <iostream>
 #include <string>
 
 using namespace std;
 
-string inputfile="input.txt", outputfile;
+string inputfile="input.txt", outputfile="";
 char buf[4096];
 vector<char> original;
-bool mode_enteractive;
+bool mode_interactive;
 
 const char str_hello[] = "Hello! Welcome to <put this program name here>!";
 const char str_request_inputfile[] = "Input file name (including path) : ";
