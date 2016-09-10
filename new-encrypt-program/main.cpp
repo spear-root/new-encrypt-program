@@ -4,6 +4,16 @@ using namespace std;
 char buf[4096 + 5];
 vector<char> original;
 
+void encrypt()
+{
+	// Write the code
+}
+
+void decrypt()
+{
+	// Write the code
+}
+
 int main()
 {
 	// Input
@@ -17,18 +27,25 @@ int main()
 		return EXIT_FAILURE;
 	}
 
-	int len = fread(buf, sizeof(char), 4096, r);  // 파일 크기가 4kB를 넘을 경우 for문으로 4kB씩 잘라 받는 코드 추가 예정.
-	
-	original.resize(len);
-	// char[]에 들어있는 바이너리 데이터를 vector<char>으로 옮긴다
-	for (int i = 0; i < len; i++)
+	//for (asdf)  // 파일 크기가 4kB 넘을 경우 for문으로 4kB씩 잘라 받는 코드 추가 예정.
 	{
-		original[i] = buf[i];
+		int len = fread(buf, sizeof(char), 4096, r);
+
+		original.resize(len);
+		// char[]에 들어있는 바이너리 데이터를 vector<char>으로 옮긴다
+		for (int i = 0; i < len; i++)
+		{
+			original[i] = buf[i];
+		}
 	}
 
 
 	// Encrypt
-	;
+	//encrypt();
+
+
+	// Decrypt (for Debug)
+	//decrypt();
 
 
 	// Output
